@@ -7,6 +7,7 @@ except ImportError:
 
 from selenium.webdriver import Chrome
 from selenium.common.exceptions import InvalidArgumentException, NoSuchElementException
+from selenium.webdriver.support.ui import Select
 from parsel import Selector
 
 
@@ -31,11 +32,8 @@ class SeleniumCmd(Cmd):
     def do_click(self, xpath):
         """click [xpath]
         click element specified by given xpath expression"""
-        try:
-            e = self.driver.find_element_by_xpath(xpath)
-            e.click()
-        except NoSuchElementException:
-            print(f'Could not find element specified by {xpath}. Please check your XPath expression for errors.')
+        e = self._find_element_by_xpath(xpath)
+        e.click()
 
     def do_extract(self, xpath):
         """extract [xpath]
@@ -46,3 +44,21 @@ class SeleniumCmd(Cmd):
                 print(i, result)
         except ValueError as e:
             print(f'{e}. Please check your XPath expression.')
+
+    def _find_element_by_xpath(self, xpath):
+        try:
+            return self.driver.find_element_by_xpath(xpath)
+        except NoSuchElementException:
+            print(f'Could not find element specified by {xpath}. Please check your XPath expression for errors.')
+
+    def do_select(self, line):
+        """select [xpath] [option]
+        select option from select tag specified by xpath
+        """
+        try:
+            xpath, option = [s for s in line.rsplit(' ', 1)]
+            e = self._find_element_by_xpath(xpath)
+            select = Select(e)
+            select.select_by_value(option)
+        except Exception as e:
+            print(e)

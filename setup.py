@@ -7,7 +7,7 @@ README = (HERE / "README.md").read_text()
 
 setup(
     name='selenium-cmd',
-    version='0.0.1',
+    version='0.0.2.dev',
     license='MIT',
     description='Tool to control Selenium from command line',
     long_description_content_type='text/markdown',

@@ -1,5 +1,5 @@
 # selenium-cmd
-selenium-cmd is a small tool with which you can perform basic actions using a selenium webdriver. Currently it only supports navigating to a website, clicking and extracting strings using XPath. 
+selenium-cmd is a small tool with which you can perform basic actions using a selenium webdriver object. Currently it only supports navigating to a website, selecting, clicking and extracting strings using XPath. 
 
 ## installation
 You can simply use
@@ -52,4 +52,14 @@ The following example will print all quotes from https://quotes.toscrape.com/:
 8 I have not failed. I've just found 10,000 ways that won't work.
 9 A woman is like a tea bag; you never know how strong it is until it's in hot water.
 10 A day without sunshine is like, you know, night.
+```
+
+### select
+The syntax for the select command is: `select xpath option`
+The `select` command will select an option by value from a select tag. The select tag needs to be specified by an XPath expression. 
+
+The following example will select the option "css" in the first select tag on https://www.w3docs.com/learn-html/html-select-tag.html:
+```
+>get https://www.w3docs.com/learn-html/html-select-tag.html
+>select //select[@aria-label="Books"] css
 ```
