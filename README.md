@@ -30,6 +30,12 @@ The following will navigate to http://example.com:
 >get http://example.com
 ```
 
+### exit
+The `exit` command will stop the execution of SeleniumCmd and continue with your regular program execution.  
+```
+>exit
+```
+
 ### click
 The `click` command will click the first element found specified by an XPath.  
 The following example will click the first link on http://example.com:
