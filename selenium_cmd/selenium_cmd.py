@@ -11,6 +11,13 @@ from selenium.common.exceptions import InvalidArgumentException, NoSuchElementEx
 from selenium.webdriver.support.ui import Select
 from parsel import Selector
 
+def split_args(line):
+    """split line in arguments"""
+    # using @ in the first argument with posix=True will remove quotation marks
+    # and therefore break most XPath expressions
+    xpath = split(line, posix=False)[0]
+    args = split(line)[1:]
+    return xpath, args
 
 class SeleniumCmd(Cmd):
     def __init__(self, driver=None) -> None:
@@ -56,7 +63,7 @@ class SeleniumCmd(Cmd):
         """select [xpath] [option]
         select option from select tag by value"""
         try:
-            xpath, option = split(line)
+            xpath, option = split_args(line)
             e = self._find_element_by_xpath(xpath)
             select = Select(e)
             select.select_by_value(option)
