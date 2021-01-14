@@ -8,28 +8,30 @@ pip install selenium-cmd
 ```
 
 ## usage
-You can use the SeleniumCmd class wherever you want in your script. 
+You can use the SeleniumCmd class wherever you want in your script.  
 You can do so by importing SeleniumCmd from selenium_cmd.
 ```
 from selenium_cmd import SeleniumCmd
 
 SeleniumCmd(your_driver).cmdloop()
 ```
-If you do not provide your own driver, SeleniumCmd will instantiate one using `Chrome()` from `selenium.webdriver`.
+If you do not provide your own driver, SeleniumCmd will instantiate one using `Chrome()` from `selenium.webdriver`.  
 This will open a prompt where you can type your commands looking like this:
 ```
 selenium-cmd version 0.0.1
 >
 ```
 
+## commands
 ### get
-With get you can navigate to different websites. The following will navigate to http://example.com:
+With get you can navigate to different websites.  
+The following will navigate to http://example.com:
 ```
 >get http://example.com
 ```
 
 ### click
-The `click` command will click the first element found specified by an XPath.
+The `click` command will click the first element found specified by an XPath.  
 The following example will click the first link on http://example.com:
 ```
 >get http://example.com
@@ -37,7 +39,7 @@ The following example will click the first link on http://example.com:
 ```
 
 ### extract
-The `extract` command will print all elements matched by the provided XPath expression to your command line. 
+The `extract` command will print all elements matched by the provided XPath expression to your command line.  
 The following example will print all quotes from https://quotes.toscrape.com/:
 ```
 >get https://quotes.toscrape.com/
@@ -55,9 +57,8 @@ The following example will print all quotes from https://quotes.toscrape.com/:
 ```
 
 ### select
-The syntax for the select command is: `select xpath option`
-The `select` command will select an option by value from a select tag. The select tag needs to be specified by an XPath expression. 
-
+The syntax for the select command is: `select xpath option`  
+The `select` command will select an option by value from a select tag. The select tag needs to be specified by an XPath expression.  
 The following example will select the option "css" in the first select tag on https://www.w3docs.com/learn-html/html-select-tag.html:
 ```
 >get https://www.w3docs.com/learn-html/html-select-tag.html
