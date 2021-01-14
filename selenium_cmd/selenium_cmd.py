@@ -1,4 +1,5 @@
 from cmd import Cmd
+from shlex import split
 try:
     from importlib import metadata
 except ImportError:
@@ -23,7 +24,7 @@ class SeleniumCmd(Cmd):
 
     def do_get(self, url):
         """get [url]
-        navigate to provided url"""
+        navigate to url"""
         try:
             self.driver.get(url)
         except InvalidArgumentException:
@@ -37,7 +38,7 @@ class SeleniumCmd(Cmd):
 
     def do_extract(self, xpath):
         """extract [xpath]
-        displays each matched element as string"""
+        display each element as string"""
         s = Selector(self.driver.page_source)
         try:
             for i, result in enumerate(s.xpath(xpath).getall(), 1):
@@ -53,10 +54,9 @@ class SeleniumCmd(Cmd):
 
     def do_select(self, line):
         """select [xpath] [option]
-        select option from select tag specified by xpath
-        """
+        select option from select tag by value"""
         try:
-            xpath, option = [s for s in line.rsplit(' ', 1)]
+            xpath, option = split(line)
             e = self._find_element_by_xpath(xpath)
             select = Select(e)
             select.select_by_value(option)
