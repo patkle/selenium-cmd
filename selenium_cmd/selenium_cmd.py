@@ -62,3 +62,6 @@ class SeleniumCmd(Cmd):
             select.select_by_value(option)
         except Exception as e:
             print(e)
+
+    def do_exit(self, _):
+        return True
