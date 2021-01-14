@@ -67,3 +67,7 @@ class SeleniumCmd(Cmd):
         """exit
         stop execution of selenium-cmd"""
         return True
+
+    def emptyline(self) -> None:
+        # overwrite Cmd.emptyline to avoid default behaviour https://docs.python.org/3/library/cmd.html#cmd.Cmd.emptyline
+        pass
