@@ -64,4 +64,6 @@ class SeleniumCmd(Cmd):
             print(e)
 
     def do_exit(self, _):
+        """exit
+        stop execution of selenium-cmd"""
         return True
