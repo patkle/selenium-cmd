@@ -70,6 +70,16 @@ class SeleniumCmd(Cmd):
         except Exception as e:
             print(e)
 
+    def do_write(self, line):
+        """write [xpath] [text] 
+        write text to a text input field"""
+        try:
+            xpath, text = split_args(line)
+            e = self._find_element_by_xpath(xpath)
+            e.send_keys(text)
+        except Exception as e:
+            print(e)
+
     def do_exit(self, _):
         """exit
         stop execution of selenium-cmd"""

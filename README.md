@@ -70,3 +70,12 @@ The following example will select the option "css" in the first select tag on ht
 >get https://www.w3docs.com/learn-html/html-select-tag.html
 >select //select[@aria-label="Books"] css
 ```
+
+### write
+The syntax for the write command is: `write xpath text`  
+The `write` command will write text to a text input field as specified. Text that contains whitespace must be enclosed in quotation marks.  
+The following example will write "Hello World!" in the search box of https://developer.mozilla.org/
+```
+>get https://developer.mozilla.org/
+>write //input[@id="main-q"] "Hello World!"
+```
