@@ -1,5 +1,16 @@
 # selenium-cmd
-selenium-cmd is a small tool with which you can perform basic actions using a selenium webdriver object. Currently it only supports navigating to a website, selecting, clicking and extracting strings using XPath. 
+selenium-cmd is a small tool with which you can perform basic actions using a selenium webdriver object.
+
+## table of contents
+1. [installation](#installation)
+2. [usage](#usage)
+3. [commands](#commands)
+    1. [get](#get)
+    1. [exit](#exit)
+    1. [click](#click)
+    1. [extract](#extract)
+    1. [select](#select)
+    1. [write](#write)
 
 ## installation
 You can simply use
