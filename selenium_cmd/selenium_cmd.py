@@ -1,5 +1,4 @@
 from cmd import Cmd
-from shlex import split
 try:
     from importlib import metadata
 except ImportError:
@@ -11,13 +10,8 @@ from selenium.common.exceptions import InvalidArgumentException, NoSuchElementEx
 from selenium.webdriver.support.ui import Select
 from parsel import Selector
 
-def split_args(line):
-    """split line in arguments"""
-    # using @ in the first argument with posix=True will remove quotation marks
-    # and therefore break most XPath expressions
-    xpath = split(line, posix=False)[0]
-    args = split(line)[1:]
-    return xpath, args
+from .argument_parser import split_args
+
 
 class SeleniumCmd(Cmd):
     def __init__(self, driver=None) -> None:
