@@ -29,7 +29,7 @@ SeleniumCmd(your_driver).cmdloop()
 If you do not provide your own driver, SeleniumCmd will instantiate one using `Chrome()` from `selenium.webdriver`.  
 This will open a prompt where you can type your commands looking like this:
 ```
-selenium-cmd version 0.0.1
+selenium-cmd version 0.0.2
 >
 ```
 
