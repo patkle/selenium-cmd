@@ -3,12 +3,6 @@ def split_args(line):
     chars = list(__mark_argument_position(line))
     args = ''.join(chars).split('\n')
     args = __remove_quotes(*args)
-    '''
-    xpath, args = args[0], args[1:]
-    if xpath.startswith("'") and xpath.endswith("'") or xpath.startswith('"') and xpath.endswith('"'):
-        xpath = xpath[1:-1]
-    return xpath, *args
-    '''
     return args
 
 def __mark_argument_position(line):
