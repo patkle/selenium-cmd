@@ -22,7 +22,7 @@ pip install selenium-cmd
 ## usage
 You can use the SeleniumCmd class wherever you want in your script.  
 You can do so by importing SeleniumCmd from selenium_cmd.
-```
+```python
 from selenium_cmd import SeleniumCmd
 
 SeleniumCmd(your_driver).cmdloop()
