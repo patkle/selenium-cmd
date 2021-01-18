@@ -1,5 +1,5 @@
 # selenium-cmd
-[![selenium-cmd on pypi](https://img.shields.io/pypi/v/selenium-cmd?color=blue)](https://pypi.org/project/selenium-cmd/)
+[![selenium-cmd on pypi](https://img.shields.io/pypi/v/selenium-cmd?color=blue)](https://pypi.org/project/selenium-cmd/)  
 selenium-cmd is a small tool with which you can perform basic actions using a selenium webdriver object.
 
 ## table of contents
